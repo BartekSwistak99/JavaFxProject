@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <Pane id="screen" fx:id="screen" layoutX="84.0" layoutY="276.0" maxHeight="271.0" maxWidth="481.0" minHeight="261.0" minWidth="440.0" prefHeight="270.0" prefWidth="479.0" stylesheets="@style.css" AnchorPane.leftAnchor="84.0" />
+        <AnchorPane id="anchor" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Text id="actualProgramDisplay" fx:id="actualProgramDisplay" fill="#1dc31d" fontSmoothingType="LCD" layoutX="502.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="0" textAlignment="CENTER" visible="false" wrappingWidth="59.13671875">
+                    <font>
+                        <Font size="64.0" />
+                    </font>
+                </Text>
+                <Text id="volumeDisplay" fx:id="volumeDisplay" fill="#1dc31d" fontSmoothingType="LCD" layoutX="96.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Volume 100 %" textAlignment="CENTER" visible="false" wrappingWidth="464.13671875" AnchorPane.bottomAnchor="53.0" AnchorPane.leftAnchor="96.0">
+                    <font>
+                        <Font size="64.0" />
+                    </font>
+                </Text>
+            <VBox alignment="CENTER" layoutX="594.0" layoutY="281.0" prefHeight="262.0" prefWidth="114.0" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="281.0">
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="ProgramP" mnemonicParsing="false" onAction="#programHandler" text="Program+" HBox.hgrow="NEVER">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="ProgramM" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#programHandler" text="Program-" textAlignment="CENTER" HBox.hgrow="NEVER">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="VolumeP" mnemonicParsing="false" onAction="#volumeHandler" text="Volume+">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="VolumeM" mnemonicParsing="false" onAction="#volumeHandler" text="Volume-">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                        <ToggleButton id="power" fx:id="power" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#togglePower" stylesheets="@style.css" text="Power" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></ToggleButton>
+               </children>
+            </VBox>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

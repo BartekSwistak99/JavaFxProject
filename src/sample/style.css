@@ -1,0 +1,21 @@
+@font-face{
+    font-family: 'LCDDoT TR';
+    src: url('lcdfont.ttf');
+}
+#anchor{
+    -fx-background-image: url("background.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-insets: -20, -10;
+    -fx-background-size: 800,600;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#screen{
+    -fx-background-image: url("screen_background.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+}
+.text{
+  -fx-font-family: 'LCDDoT TR';
+}
