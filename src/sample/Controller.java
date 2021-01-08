@@ -194,11 +194,13 @@ public class Controller {
     protected void muteHandler(ActionEvent event) {
         if(!mute) {
             mediaView.getMediaPlayer().setVolume(0);
+            volumeDisplay.setText("Muted");
             mute = true;
         }
         else
         {
             mediaView.getMediaPlayer().setVolume(volume);
+            volumeDisplay.setText("unMuted");
             mute = false;
         }
 
