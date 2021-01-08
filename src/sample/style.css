@@ -19,3 +19,19 @@
 .text{
   -fx-font-family: 'LCDDoT TR';
 }
+.toggle-button{
+
+    -fx-graphic: url("OFF.png");
+    -fx-background-size: 30px;
+    -fx-background-color: transparent;
+
+}
+.toggle-button:selected
+{
+
+    -fx-graphic: url("ON.png");
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+
+
+}

@@ -27,7 +27,7 @@ public class Controller {
     private static final ArrayList<String> FILENAMES = new ArrayList<>(Arrays.asList(
             "noise.mp4",
             "program1.mp4",
-            null,
+            "kiepscy.mp4",
             null,
             null,
             null,
@@ -58,7 +58,7 @@ public class Controller {
     private Button VolumeM;
     @FXML
     private Button VolumeP;
-
+    private boolean mute = false;
     protected static void runCounter() {
         new Timer().schedule(
                 new TimerTask() {
@@ -158,17 +158,21 @@ public class Controller {
     protected void volumeHandler(ActionEvent event) {
         if (!turnedOn) return;
         Button b = (Button) event.getSource();
-        if (b.getText().equals("Volume+")) {
+        if(b.getId().equals("VolumeP"))
+        {
             if (volume < MAX_VOLUME) {
                 volume++;
                 mediaView.getMediaPlayer().setVolume(volume / 100.0);
             }
-        } else {
+        }
+        else
+        {
             if (volume > 0) {
                 volume--;
                 mediaView.getMediaPlayer().setVolume( volume / 100.0);
             }
         }
+
         showVolume(volume);
     }
 
@@ -176,13 +180,27 @@ public class Controller {
     protected void programHandler(ActionEvent event) {
         if (!turnedOn) return;
         Button b = (Button) event.getSource();
-        if (b.getText().equals("Program+")) {
+        if (b.getId().equals("ProgramP")) {
             program = (program == MAX_PROGRAM ? 1 : ++program);
         } else {
             program = (program == 1 ? MAX_PROGRAM : --program);
         }
         playVideo(program);
         showProgram(program);
+
+    }
+
+    @FXML
+    protected void muteHandler(ActionEvent event) {
+        if(!mute) {
+            mediaView.getMediaPlayer().setVolume(0);
+            mute = true;
+        }
+        else
+        {
+            mediaView.getMediaPlayer().setVolume(volume);
+            mute = false;
+        }
 
     }
 }
